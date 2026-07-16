@@ -1,0 +1,18 @@
+{
+  "mode": "flux_to_flux",
+  "description": "Klein 9B to Flux 1 Dev. 1:1 mapping of last 12 blocks with gradient ratios.",
+  "blocks": {
+    "double_26": {"donor": 12, "enabled": true, "ratio": 0.06}, "single_26": {"donor": 12, "enabled": true, "ratio": 0.06},
+    "double_27": {"donor": 13, "enabled": true, "ratio": 0.06}, "single_27": {"donor": 13, "enabled": true, "ratio": 0.06},
+    "double_28": {"donor": 14, "enabled": true, "ratio": 0.06}, "single_28": {"donor": 14, "enabled": true, "ratio": 0.06},
+    "double_29": {"donor": 15, "enabled": true, "ratio": 0.06}, "single_29": {"donor": 15, "enabled": true, "ratio": 0.06},
+    "double_30": {"donor": 16, "enabled": true, "ratio": 0.10}, "single_30": {"donor": 16, "enabled": true, "ratio": 0.10},
+    "double_31": {"donor": 17, "enabled": true, "ratio": 0.10}, "single_31": {"donor": 17, "enabled": true, "ratio": 0.10},
+    "double_32": {"donor": 18, "enabled": true, "ratio": 0.10}, "single_32": {"donor": 18, "enabled": true, "ratio": 0.10},
+    "double_33": {"donor": 19, "enabled": true, "ratio": 0.10}, "single_33": {"donor": 19, "enabled": true, "ratio": 0.10},
+    "double_34": {"donor": 20, "enabled": true, "ratio": 0.15}, "single_34": {"donor": 20, "enabled": true, "ratio": 0.15},
+    "double_35": {"donor": 21, "enabled": true, "ratio": 0.15}, "single_35": {"donor": 21, "enabled": true, "ratio": 0.15},
+    "double_36": {"donor": 22, "enabled": true, "ratio": 0.15}, "single_36": {"donor": 22, "enabled": true, "ratio": 0.15},
+    "double_37": {"donor": 23, "enabled": true, "ratio": 0.15}, "single_37": {"donor": 23, "enabled": true, "ratio": 0.15}
+  }
+}

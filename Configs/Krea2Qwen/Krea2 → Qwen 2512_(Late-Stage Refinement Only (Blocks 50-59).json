@@ -1,0 +1,16 @@
+{
+  "mode": "krea_to_qwen",
+  "description": "Late-Stage Refinement Only (Blocks 50-59). Merges all components but only at the very end to add detail without shifting global contrast.",
+  "blocks": {
+    "50": {"donor": 24, "enabled": true, "ratio": 0.12},
+    "51": {"donor": 24, "enabled": true, "ratio": 0.12},
+    "52": {"donor": 25, "enabled": true, "ratio": 0.12},
+    "53": {"donor": 25, "enabled": true, "ratio": 0.12},
+    "54": {"donor": 26, "enabled": true, "ratio": 0.12},
+    "55": {"donor": 26, "enabled": true, "ratio": 0.12},
+    "56": {"donor": 27, "enabled": true, "ratio": 0.12},
+    "57": {"donor": 27, "enabled": true, "ratio": 0.12},
+    "58": {"donor": 27, "enabled": true, "ratio": 0.12},
+    "59": {"donor": 27, "enabled": true, "ratio": 0.12}
+  }
+}

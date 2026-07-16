@@ -1,0 +1,13 @@
+{
+  "mode": "qwen_to_krea",
+  "description": "Injecting Qwen structural coherence into Krea. Attention focus, very low ratio.",
+  "blocks": {
+    "15": {"donor": 35, "enabled": true, "ratio": 0.08},
+    "17": {"donor": 38, "enabled": true, "ratio": 0.08},
+    "19": {"donor": 41, "enabled": true, "ratio": 0.08},
+    "21": {"donor": 44, "enabled": true, "ratio": 0.08},
+    "23": {"donor": 47, "enabled": true, "ratio": 0.08},
+    "25": {"donor": 50, "enabled": true, "ratio": 0.08},
+    "27": {"donor": 55, "enabled": true, "ratio": 0.08}
+  }
+}

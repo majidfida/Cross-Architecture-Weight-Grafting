@@ -1,0 +1,25 @@
+{
+  "mode": "flux_to_flux",
+  "description": "Flux 2 to Flux 1 Dev. 1:1 mapping of last 19 blocks with gradient ratios.",
+  "blocks": {
+    "double_19": {"donor": 29, "enabled": true, "ratio": 0.06}, "single_19": {"donor": 29, "enabled": true, "ratio": 0.06},
+    "double_20": {"donor": 30, "enabled": true, "ratio": 0.06}, "single_20": {"donor": 30, "enabled": true, "ratio": 0.06},
+    "double_21": {"donor": 31, "enabled": true, "ratio": 0.06}, "single_21": {"donor": 31, "enabled": true, "ratio": 0.06},
+    "double_22": {"donor": 32, "enabled": true, "ratio": 0.06}, "single_22": {"donor": 32, "enabled": true, "ratio": 0.06},
+    "double_23": {"donor": 33, "enabled": true, "ratio": 0.06}, "single_23": {"donor": 33, "enabled": true, "ratio": 0.06},
+    "double_24": {"donor": 34, "enabled": true, "ratio": 0.06}, "single_24": {"donor": 34, "enabled": true, "ratio": 0.06},
+    "double_25": {"donor": 35, "enabled": true, "ratio": 0.06}, "single_25": {"donor": 35, "enabled": true, "ratio": 0.06},
+    "double_26": {"donor": 36, "enabled": true, "ratio": 0.10}, "single_26": {"donor": 36, "enabled": true, "ratio": 0.10},
+    "double_27": {"donor": 37, "enabled": true, "ratio": 0.10}, "single_27": {"donor": 37, "enabled": true, "ratio": 0.10},
+    "double_28": {"donor": 38, "enabled": true, "ratio": 0.10}, "single_28": {"donor": 38, "enabled": true, "ratio": 0.10},
+    "double_29": {"donor": 39, "enabled": true, "ratio": 0.10}, "single_29": {"donor": 39, "enabled": true, "ratio": 0.10},
+    "double_30": {"donor": 40, "enabled": true, "ratio": 0.10}, "single_30": {"donor": 40, "enabled": true, "ratio": 0.10},
+    "double_31": {"donor": 41, "enabled": true, "ratio": 0.10}, "single_31": {"donor": 41, "enabled": true, "ratio": 0.10},
+    "double_32": {"donor": 42, "enabled": true, "ratio": 0.10}, "single_32": {"donor": 42, "enabled": true, "ratio": 0.10},
+    "double_33": {"donor": 43, "enabled": true, "ratio": 0.15}, "single_33": {"donor": 43, "enabled": true, "ratio": 0.15},
+    "double_34": {"donor": 44, "enabled": true, "ratio": 0.15}, "single_34": {"donor": 44, "enabled": true, "ratio": 0.15},
+    "double_35": {"donor": 45, "enabled": true, "ratio": 0.15}, "single_35": {"donor": 45, "enabled": true, "ratio": 0.15},
+    "double_36": {"donor": 46, "enabled": true, "ratio": 0.15}, "single_36": {"donor": 46, "enabled": true, "ratio": 0.15},
+    "double_37": {"donor": 47, "enabled": true, "ratio": 0.15}, "single_37": {"donor": 47, "enabled": true, "ratio": 0.15}
+  }
+}

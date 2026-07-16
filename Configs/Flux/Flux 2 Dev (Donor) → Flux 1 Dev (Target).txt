@@ -1,0 +1,18 @@
+{
+  "mode": "flux_to_flux",
+  "description": "Flux 2 Dev into Flux 1 Dev. Mid-to-late refinement focus to preserve Flux 1's base style while adding Flux 2's detail.",
+  "blocks": {
+    "double_19": {"donor": 24, "enabled": true, "ratio": 0.12},
+    "double_23": {"donor": 29, "enabled": true, "ratio": 0.12},
+    "double_27": {"donor": 34, "enabled": true, "ratio": 0.12},
+    "double_31": {"donor": 39, "enabled": true, "ratio": 0.12},
+    "double_35": {"donor": 44, "enabled": true, "ratio": 0.12},
+    "double_37": {"donor": 47, "enabled": true, "ratio": 0.12},
+    "single_19": {"donor": 24, "enabled": true, "ratio": 0.12},
+    "single_23": {"donor": 29, "enabled": true, "ratio": 0.12},
+    "single_27": {"donor": 34, "enabled": true, "ratio": 0.12},
+    "single_31": {"donor": 39, "enabled": true, "ratio": 0.12},
+    "single_35": {"donor": 44, "enabled": true, "ratio": 0.12},
+    "single_37": {"donor": 47, "enabled": true, "ratio": 0.12}
+  }
+}

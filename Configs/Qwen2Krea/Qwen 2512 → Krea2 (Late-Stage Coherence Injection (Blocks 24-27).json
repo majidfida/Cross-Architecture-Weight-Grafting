@@ -1,0 +1,10 @@
+{
+  "mode": "qwen_to_krea",
+  "description": "Late-Stage Coherence Injection (Blocks 24-27). Injects Qwen's structural stability into Krea's final refinement layers at a very conservative ratio.",
+  "blocks": {
+    "24": {"donor": 50, "enabled": true, "ratio": 0.08},
+    "25": {"donor": 52, "enabled": true, "ratio": 0.08},
+    "26": {"donor": 55, "enabled": true, "ratio": 0.08},
+    "27": {"donor": 59, "enabled": true, "ratio": 0.08}
+  }
+}

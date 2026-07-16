@@ -1,0 +1,18 @@
+{
+  "mode": "flux_to_flux",
+  "description": "Klein 9B into Flux 1 Dev. Injects Klein's structural stability and prompt adherence into Flux 1's late layers.",
+  "blocks": {
+    "double_19": {"donor": 12, "enabled": true, "ratio": 0.10},
+    "double_23": {"donor": 15, "enabled": true, "ratio": 0.10},
+    "double_27": {"donor": 17, "enabled": true, "ratio": 0.10},
+    "double_31": {"donor": 20, "enabled": true, "ratio": 0.10},
+    "double_35": {"donor": 22, "enabled": true, "ratio": 0.10},
+    "double_37": {"donor": 23, "enabled": true, "ratio": 0.10},
+    "single_19": {"donor": 12, "enabled": true, "ratio": 0.10},
+    "single_23": {"donor": 15, "enabled": true, "ratio": 0.10},
+    "single_27": {"donor": 17, "enabled": true, "ratio": 0.10},
+    "single_31": {"donor": 20, "enabled": true, "ratio": 0.10},
+    "single_35": {"donor": 22, "enabled": true, "ratio": 0.10},
+    "single_37": {"donor": 23, "enabled": true, "ratio": 0.10}
+  }
+}

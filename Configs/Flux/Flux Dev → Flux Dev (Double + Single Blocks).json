@@ -1,0 +1,24 @@
+{
+  "mode": "flux_to_flux",
+  "global_note": "Flux-to-Flux transplant. Maps double_blocks (0-18) and single_blocks (0-37) with moderate ratios.",
+  "blocks": {
+    "double_0": {"donor": 0, "enabled": true, "ratio": 0.10},
+    "double_2": {"donor": 2, "enabled": true, "ratio": 0.10},
+    "double_4": {"donor": 4, "enabled": true, "ratio": 0.10},
+    "double_6": {"donor": 6, "enabled": true, "ratio": 0.12},
+    "double_8": {"donor": 8, "enabled": true, "ratio": 0.12},
+    "double_10": {"donor": 10, "enabled": true, "ratio": 0.12},
+    "double_12": {"donor": 12, "enabled": true, "ratio": 0.15},
+    "double_14": {"donor": 14, "enabled": true, "ratio": 0.15},
+    "double_16": {"donor": 16, "enabled": true, "ratio": 0.15},
+    "double_18": {"donor": 18, "enabled": true, "ratio": 0.12},
+    "single_0": {"donor": 0, "enabled": true, "ratio": 0.10},
+    "single_5": {"donor": 5, "enabled": true, "ratio": 0.10},
+    "single_10": {"donor": 10, "enabled": true, "ratio": 0.12},
+    "single_15": {"donor": 15, "enabled": true, "ratio": 0.12},
+    "single_20": {"donor": 20, "enabled": true, "ratio": 0.15},
+    "single_25": {"donor": 25, "enabled": true, "ratio": 0.15},
+    "single_30": {"donor": 30, "enabled": true, "ratio": 0.12},
+    "single_35": {"donor": 35, "enabled": true, "ratio": 0.10}
+  }
+}

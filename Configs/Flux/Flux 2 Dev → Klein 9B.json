@@ -1,0 +1,18 @@
+{
+  "mode": "flux_to_flux",
+  "description": "Flux 2 to Klein 9B. 1:1 mapping of last 12 blocks with gradient ratios (0.06 -> 0.10 -> 0.15).",
+  "blocks": {
+    "double_12": {"donor": 36, "enabled": true, "ratio": 0.06}, "single_12": {"donor": 36, "enabled": true, "ratio": 0.06},
+    "double_13": {"donor": 37, "enabled": true, "ratio": 0.06}, "single_13": {"donor": 37, "enabled": true, "ratio": 0.06},
+    "double_14": {"donor": 38, "enabled": true, "ratio": 0.06}, "single_14": {"donor": 38, "enabled": true, "ratio": 0.06},
+    "double_15": {"donor": 39, "enabled": true, "ratio": 0.06}, "single_15": {"donor": 39, "enabled": true, "ratio": 0.06},
+    "double_16": {"donor": 40, "enabled": true, "ratio": 0.10}, "single_16": {"donor": 40, "enabled": true, "ratio": 0.10},
+    "double_17": {"donor": 41, "enabled": true, "ratio": 0.10}, "single_17": {"donor": 41, "enabled": true, "ratio": 0.10},
+    "double_18": {"donor": 42, "enabled": true, "ratio": 0.10}, "single_18": {"donor": 42, "enabled": true, "ratio": 0.10},
+    "double_19": {"donor": 43, "enabled": true, "ratio": 0.10}, "single_19": {"donor": 43, "enabled": true, "ratio": 0.10},
+    "double_20": {"donor": 44, "enabled": true, "ratio": 0.15}, "single_20": {"donor": 44, "enabled": true, "ratio": 0.15},
+    "double_21": {"donor": 45, "enabled": true, "ratio": 0.15}, "single_21": {"donor": 45, "enabled": true, "ratio": 0.15},
+    "double_22": {"donor": 46, "enabled": true, "ratio": 0.15}, "single_22": {"donor": 46, "enabled": true, "ratio": 0.15},
+    "double_23": {"donor": 47, "enabled": true, "ratio": 0.15}, "single_23": {"donor": 47, "enabled": true, "ratio": 0.15}
+  }
+}

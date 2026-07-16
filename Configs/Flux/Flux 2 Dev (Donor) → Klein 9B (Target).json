@@ -1,0 +1,16 @@
+{
+  "mode": "flux_to_flux",
+  "description": "Flux 2 Dev into Klein 9B. Maps Flux 2's deep refinement layers into Klein's mid-to-late blocks for enhanced detail.",
+  "blocks": {
+    "double_12": {"donor": 24, "enabled": true, "ratio": 0.12},
+    "double_15": {"donor": 30, "enabled": true, "ratio": 0.12},
+    "double_18": {"donor": 36, "enabled": true, "ratio": 0.12},
+    "double_21": {"donor": 42, "enabled": true, "ratio": 0.12},
+    "double_23": {"donor": 47, "enabled": true, "ratio": 0.12},
+    "single_12": {"donor": 24, "enabled": true, "ratio": 0.12},
+    "single_15": {"donor": 30, "enabled": true, "ratio": 0.12},
+    "single_18": {"donor": 36, "enabled": true, "ratio": 0.12},
+    "single_21": {"donor": 42, "enabled": true, "ratio": 0.12},
+    "single_23": {"donor": 47, "enabled": true, "ratio": 0.12}
+  }
+}

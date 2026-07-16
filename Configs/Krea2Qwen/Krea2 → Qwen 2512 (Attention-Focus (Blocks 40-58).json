@@ -1,0 +1,16 @@
+{
+  "mode": "krea_to_qwen",
+  "description": "Attention-Focus (Blocks 40-58). Targets structural refinement. Requires MLP lines to be commented out in node code for strict attention-only merging.",
+  "blocks": {
+    "40": {"donor": 18, "enabled": true, "ratio": 0.15},
+    "42": {"donor": 19, "enabled": true, "ratio": 0.15},
+    "44": {"donor": 20, "enabled": true, "ratio": 0.15},
+    "46": {"donor": 21, "enabled": true, "ratio": 0.15},
+    "48": {"donor": 22, "enabled": true, "ratio": 0.15},
+    "50": {"donor": 23, "enabled": true, "ratio": 0.15},
+    "52": {"donor": 24, "enabled": true, "ratio": 0.15},
+    "54": {"donor": 25, "enabled": true, "ratio": 0.15},
+    "56": {"donor": 26, "enabled": true, "ratio": 0.15},
+    "58": {"donor": 27, "enabled": true, "ratio": 0.15}
+  }
+}
