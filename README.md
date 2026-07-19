@@ -20,229 +20,92 @@ The goal is not to replace the original model. The goal is to see whether one mo
 
 ---
 
-# How It Works
+ Video Model Experiments: LTX 2.3 + Wan 2.2
 
-The workflow follows a few simple steps:
+This branch is all about merging video generation models. I'm testing if we can take the best parts from different models and combine them into something better.
 
-* Inspect the transformer layers of both models.
-* Find blocks that appear to perform similar jobs.
-* Adjust tensor sizes where necessary so the weights can fit.
-* Blend only a small amount of the source weights into the target model.
+## What I'm Doing
 
-Keeping the blend ratio low is important. Large changes usually damage the original model and reduce image quality.
+Right now, I'm merging **Wan 2.2 Low-Noise** into **LTX Video 2.3 Dev**.
 
-You can think of this as a **weight transplant** rather than a traditional model merge.
+**Why?** 
+- LTX 2.3 has great structure and follows prompts well
+- Wan 2.2 Low-Noise creates incredibly clean, detailed textures (skin pores, hair, water droplets)
+- The goal: Keep LTX's strengths but add Wan's photorealistic detail
 
----
+## How It Works
 
-# Current Experiments
+The merge node does three smart things:
 
-This experiment was performed using the following models:
+1. **Automatic Size Matching**: Wan 2.2 is bigger (5120 hidden dimension) than LTX 2.3 (4096). The node automatically shrinks Wan's weights to fit, padding with zeros where needed.
 
-### Base Model
-- Qwen-Image-2512 (custom fine-tuned version)
-  - Civitai: https://civitai.red/models/2557806/qwen-overcooked?modelVersionId=2874469
+2. **CPU-Only Processing**: All the heavy lifting happens on your system RAM, not your GPU. This prevents crashes on 24GB cards.
 
-### Donor Model
-- Krea-2-Raw (official release)
-  - Official download: https://huggingface.co/krea/Krea-2-Raw
+3. **Smart Tensor Handling**: It detects FP8 tensors, converts them safely, and only merges `.weight` tensors (ignoring `.bias`) to avoid shape mismatches.
 
-## Best Result
+## What You'll Need
 
-### Krea 2 → Qwen-Image-2512
+**Hardware:**
+- **System RAM**: 128GB recommended (we're loading two huge models at once)
+- **VRAM**: 24GB minimum (for generating video after the merge)
 
-This is currently the best combination I have found.
+**Models:**
+- LTX Video 2.3 Dev (or Distilled)
+- Wan 2.2 Low-Noise BF16
 
-Qwen-Image already produces excellent composition, prompt understanding and image structure.
+## Coming Soon
 
-Krea 2 produces beautiful lighting, realistic textures and a more photographic look.
+I'm still testing, but this branch will include:
 
-By transferring a small amount of Krea 2's weights into Qwen-Image, the images appear to keep Qwen's strong structure while gaining some of Krea's visual style.
+- ** Advanced Model Inspector** - Check model keys and shapes without loading the whole file
+- **🎬 Video Preset Loader** - Pre-configured merge ratios (Conservative, Balanced, Aggressive)
+- **🧬 Video Transplant Node** - The actual merge engine
 
-The best results so far were achieved using approximately:
+## Test Results
 
-```text
-- Early layers: 2–4%
-- Middle layers: 5–10%
-- Late layers: 3–8%
-```
+### Example 1: Extreme Macro Detail
 
-Higher values usually reduced image quality or changed the behaviour of the model too much.
+**Merged (Left)** vs **Original LTX 2.3 (Right)**
 
----
-
-## Comparison Examples
-
-### Example 1
-
-**Left:** Original Qwen-Image-2512
-
-**Right:** Cross-Architecture Weight Grafting (Krea 2 → Qwen-Image-2512)
-
-![Example 1](examples/example_01.png)
+![Example 1](examples/video_test/Wan22toLtx23_example_01.jpg)
 
 ---
 
-### Example 2
+### Example 2: Skin Texture & Freckles
 
+**Merged (Left)** vs **Original LTX 2.3 (Right)**
 
-![Example 2](examples/example_02.png)
-
----
-
-### Example 3
-
-
-![Example 3](examples/example_03.png)
+![Example 2](examples/video_test/Wan22toLtx23_example_02.jpg)
 
 ---
 
-### Example 4
+### Example 3: Wet Hair & Water Droplets
 
-![Example 4](examples/example_04.png)
+**Merged (Left)** vs **Original LTX 2.3 (Right)**
 
----
-
-### Example 5
-
-![Example 5](examples/example_05.png)
+![Example 3](examples/video_test/Wan22toLtx23_example_04.jpg)
 
 ---
 
-### Example 6
+## What I'm Seeing
 
-![Example 6](examples/example_06.png)
+Early tests show the merged model:
 
----
+✅ **Better micro-textures** - Sharper pores, finer hair strands, crisper water droplets  
+✅ **Same identity** - No face drift or geometry changes  
+✅ **Cleaner shadows** - Less noise in dark areas  
+✅ **Preserved lighting** - Cinematic contrast stays intact  
 
-# Other Experiments
+⚠️ **Still testing** - I need to run more comparisons before declaring victory
 
-Not every combination produced useful results.
+## How to Use (Once Ready)
 
-## Qwen-Image-2512 → Krea 2
+1. Clone this branch to your `custom_nodes` folder
+2. Restart ComfyUI
+3. Use the **Model Inspector** to verify your model files
+4. Run the **Transplant Node** and wait for the merge
+5. Test with short prompts first!
 
-The generated images lost much of Krea's original realism and gradually started looking more like a weaker version of Qwen.
+## Status
 
----
-
-## FLUX → Other Architectures
-
-Some combinations successfully generated images, but the overall quality was inconsistent.
-
-Common problems included:
-
-* softer details
-* higher contrast
-* reduced texture quality
-* unnatural lighting
-
-These results suggest that simply matching tensor sizes is not enough. Different models learn internal features in different ways, so some combinations work much better than others.
-
-### Example Flux 2 dev to Klein 9b
-
-All images are final merged version of klien 9B
-
-![Example 1](examples/flux2_to_Klein9b.jpg)
-
-### Example Flux 2 dev to Flux 1 Dev
-
-All images are final merged version of Flux Dev 1
-
-![Example 1](examples/flux2_to_flux1.jpg)
-
----
-
-# Repository Contents
-
-This repository contains:
-
-* Custom ComfyUI workflow
-* Configuration files used during testing
-* Example comparison images
-* Documentation explaining the process
-
-Everything included here is the same workflow and settings used for the experiments shown above.
-
-If you would like to test different mappings or weight ratios, feel free to experiment and share your results.
-
----
-
-# Why I Am Not Sharing the Merged Model
-
-You may notice that this repository does **not** include the merged `.safetensors` checkpoint.
-
-The reason is simple.
-
-The original models used in these experiments are released under different licenses. Some licenses place restrictions on sharing modified model weights or redistributing derivative checkpoints.
-
-Rather than risk violating those licenses, I have chosen **not** to upload the merged model.
-
-Instead, this repository provides the workflow, configuration files and documentation so anyone can reproduce the experiments using the original models downloaded from their official sources.
-
-This approach respects the original model creators while still allowing others to explore the same ideas.
-
----
-
-# Important Note
-
-This is an experimental research project.
-
-The purpose is simply to explore whether useful visual features can be transferred between models with different architectures.
-
-Some combinations produce surprisingly good results, while others produce poor or unexpected outputs.
-
-The workflows and configuration files included in this repository are the exact settings used during my testing. I hope they provide a useful starting point for anyone interested in exploring different model combinations.
-
----
-## Requirements
-
-Hardware: CPU only. No GPU is required.
-
-System RAM: The minimum RAM needed depends on the size of the target model, not the donor model. For example, grafting a large donor model (like a 65GB Flux 2) into a smaller target model (like Klein 9B) will only consume RAM based on the Klein 9B's size, plus a small overhead for the merging process. As a baseline, ensure your system has enough RAM to load and save the target model comfortably (target model size + 4–8 GB of overhead).
-
-
-## Installation
-
-Copy the `Advanced_Model_Inspector` and `ComfyUI-FrankensteinTransplant` into your `ComfyUI/custom_nodes/` directory, then restart ComfyUI. 
-
-A preview of the workflow is available in the `examples` folder as `workflow.jpg`.
-
-## Usage
-
-Load the workflow in ComfyUI. You will see two main groups: **Model Inspector** and **Merger**.
-
-### Model Inspector
-Use this to analyze a model and build a custom configuration. Select the model and run the workflow. It takes a few seconds to output the block information needed for your config. Refer to the included example configs to see the correct format.
-
-### Merger
-1. Select the target and donor models.
-2. Paste your configuration into the text box.
-3. Enter a name for the new merged model.
-4. Run the workflow.
-
-*Note: If the global ratio is set above 0, it overrides your custom layer-based ratios and applies the global value to all layers.*
-
-### Workflow
-
-![Workflow](examples/workflow.jpg)
-
-
-
-# Credits
-
-This project builds on the amazing work of the original model creators.
-
-* **Qwen Team** — Qwen-Image-2512
-* **Krea AI** — Krea 2
-* **Black Forest Labs** — FLUX
-* **Klein AI Team** — Klein
-
-A big thank you to everyone in the open-source AI community who develops tools for inspecting, training and experimenting with modern generative models.
-
----
-
-## Disclaimer
-
-This project is an independent research experiment and is not affiliated with or endorsed by the creators of the original models.
-
-Please download all original models from their official sources and follow the license terms provided by their respective authors.
+ **Active Testing** - This is experimental. The nodes work, but I'm still tuning the merge ratios and verifying quality. Check back soon for updates.
